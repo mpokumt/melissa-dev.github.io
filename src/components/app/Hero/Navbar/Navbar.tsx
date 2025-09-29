@@ -36,7 +36,7 @@ export const Navbar = ({
                 <a onClick={() => handleScrollToSection("hero")}>
                     <img
                         className="cursor-pointer"
-                        src="/favicon.svg"
+                        src="/portfolio/favicon.svg"
                         alt="engineer portfolio logo"
                         width={40}
                         height={40}

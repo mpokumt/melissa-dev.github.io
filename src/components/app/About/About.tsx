@@ -117,6 +117,7 @@ export const About = ({ isDark }: AboutProps) => {
                                         height={45}
                                         width={45}
                                         alt={`A tile displaying ${skill.name} logo`}
+                                        className="inline-block"
                                     />
                                     <p
                                         className={`text-sm font-light mt-2 ${

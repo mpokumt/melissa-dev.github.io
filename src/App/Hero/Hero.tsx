@@ -53,14 +53,14 @@ export const Hero = ({ isDark, handleScrollToSection }: HeroProps) => {
     }, []);
 
     const techStack = [
-        "React",
-        "Node.js",
-        "Python",
         "TypeScript",
-        "AWS",
-        "Docker",
-        "GraphQL",
-        "MongoDB"
+        "React",
+        "Next.js",
+        "Python",
+        "React Native",
+        "JavaScript",
+        "HTML/CSS",
+        "AI/ML"
     ];
 
     const handleChevronOnClick = () => {
@@ -95,7 +95,7 @@ export const Hero = ({ isDark, handleScrollToSection }: HeroProps) => {
                                     isDark ? "text-gray-100" : "text-gray-900"
                                 } h-20 lg:h-24`}
                             >
-                                {displayText.split(" ").map((word, index) => (
+                                {displayText.split(" ").map((word: string, index) => (
                                     <span key={index}>
                                         {word}
                                         {index < displayText.split(" ").length - 1 && " "}
@@ -121,12 +121,15 @@ export const Hero = ({ isDark, handleScrollToSection }: HeroProps) => {
                             </div>
 
                             <p
-                                className={`text-lg leading-relaxed max-w-2xl mx-auto mb-20 font-extralight tracking-wide ${
-                                    isDark ? "text-gray-300" : "text-gray-600"
+                                className={`text-lg leading-relaxed max-w-2xl mx-auto mb-20 tracking-wide ${
+                                    isDark
+                                        ? "text-gray-300 font-extralight"
+                                        : "text-gray-600 font-light"
                                 }`}
                             >
-                                I engineer intelligent systems that automate workflows, power user
-                                experiences, and leverage AI innovation to solve complex problems.
+                                I specialise in building powerful performant applications and user
+                                experiences that solve real world painpoints, improve and automate
+                                workflows, and leverage AI innovation to solve complex problems.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-5">
@@ -134,7 +137,7 @@ export const Hero = ({ isDark, handleScrollToSection }: HeroProps) => {
                                     <Button
                                         size="xl"
                                         className="bg-teal-500 hover:bg-teal-400 text-white rounded-2xl px-8 py-3 transition-all duration-300 hover:scale-101 hover:shadow-lg hover:shadow-teal-500/25 w-50 text-md cursor-pointer"
-                                        onClick={() => handleScrollToSection("projects")}
+                                        onClick={() => handleScrollToSection("about")}
                                     >
                                         <IconEyeCode className="w-10 h-10 mr-2 text-lg" />
                                         About Me
@@ -179,15 +182,8 @@ export const Hero = ({ isDark, handleScrollToSection }: HeroProps) => {
                             </div>
 
                             <div className="pt-12">
-                                <p
-                                    className={`text-sm font-medium mb-4 ${
-                                        isDark ? "text-gray-300" : "text-gray-600"
-                                    }`}
-                                >
-                                    Tech Stack
-                                </p>
                                 <div className="flex flex-wrap gap-3 justify-center">
-                                    {techStack.map((tech) => (
+                                    {techStack.map((tech: string) => (
                                         <span
                                             key={tech}
                                             className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 ${
@@ -209,10 +205,10 @@ export const Hero = ({ isDark, handleScrollToSection }: HeroProps) => {
             <Button
                 onClick={handleChevronOnClick}
                 className={`absolute bg-transparent hover:bg-transparent bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer ${
-                    isDark ? "text-gray-300" : "text-gray-600"
+                    isDark ? "text-gray-300" : "text-gray-600 shadow-none"
                 }`}
             >
-                <IconChevronsDown className="w-6 h-6" />
+                <IconChevronsDown size={48} stroke={3} />
             </Button>
         </section>
     );

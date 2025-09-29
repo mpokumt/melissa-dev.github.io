@@ -1,32 +1,42 @@
-import { IconCloudCode, IconCode, IconDatabaseCog, IconServerCog } from "@tabler/icons-react";
+import { IconCode } from "@tabler/icons-react";
 import { motion } from "motion/react";
+
+interface SkillInfo {
+    name: string;
+    url: string;
+}
 
 interface AboutProps {
     isDark: boolean;
 }
 
 export const About = ({ isDark }: AboutProps) => {
-    const skillCategories = [
-        {
-            title: "Languages",
-            icon: IconCode,
-            skills: ["JavaScript/TypeScript", "Python", "Go"]
-        },
-        {
-            title: "Backend",
-            icon: IconServerCog,
-            skills: ["Express", "Flask", "GraphQL", "VJS", "WebRTC", "Mux", "Buffalo", "LLMs"]
-        },
-        {
-            title: "Cloud & DevOps",
-            icon: IconCloudCode,
-            skills: ["AWS", "Docker", "Kubernetes", "CI/CD"]
-        },
-        {
-            title: "Databases",
-            icon: IconDatabaseCog,
-            skills: ["PostgreSQL", "MongoDB", "Redis", "ElasticSearch"]
-        }
+    const baseUrl = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/";
+    const skillCategories: SkillInfo[] = [
+        { name: "TypeScript", url: "typescript/typescript-original.svg" },
+        { name: "React", url: "react/react-original.svg" },
+        { name: "JavaScript", url: "javascript/javascript-original.svg" },
+        { name: "Next.js", url: "nextjs/nextjs-original.svg" },
+        { name: "Vite.js", url: "vitejs/vitejs-original.svg" },
+        { name: "HTML", url: "html5/html5-original.svg" },
+        { name: "CSS", url: "css3/css3-original.svg" },
+        { name: "TailwindCSS", url: "tailwindcss/tailwindcss-original.svg" },
+        { name: "Python", url: "python/python-original.svg" },
+        { name: "Java", url: "java/java-original.svg" },
+        { name: "Node.js", url: "nodejs/nodejs-original.svg" },
+        { name: "Django", url: "django/django-plain.svg" },
+        { name: "MySQL", url: "mysql/mysql-original.svg" },
+        { name: "PostgreSQL", url: "postgresql/postgresql-original.svg" },
+        { name: "MongoDB", url: "mongodb/mongodb-original.svg" },
+        { name: "Git", url: "git/git-original.svg" },
+        { name: "GraphQL", url: "graphql/graphql-plain.svg" },
+        { name: "Docker", url: "docker/docker-original.svg" },
+        { name: "Kubernetes", url: "kubernetes/kubernetes-original.svg" },
+        { name: "Jenkins", url: "jenkins/jenkins-original.svg" },
+        { name: "GHActions", url: "githubactions/githubactions-original.svg" },
+        { name: "Storybook", url: "storybook/storybook-original.svg" },
+        { name: "Jest", url: "jest/jest-plain.svg" },
+        { name: "Cypress", url: "cypressio/cypressio-original.svg" }
     ];
 
     return (
@@ -49,7 +59,7 @@ export const About = ({ isDark }: AboutProps) => {
                     transition={{ duration: 1, delay: 0.5 }}
                     viewport={{ once: true }}
                 >
-                    <div className="mb-16">
+                    <div className="mb-10">
                         <h2
                             className={`text-5xl font-bold mb-8 ${
                                 isDark ? "text-gray-100" : "text-gray-900"
@@ -63,7 +73,7 @@ export const About = ({ isDark }: AboutProps) => {
                                 isDark ? "text-gray-300" : "text-gray-600"
                             }`}
                         >
-                            <p>
+                            <p className="mb-1">
                                 I'm a collaborative, proactive, and passionate software engineer
                                 with over 8 years of professional experience building
                                 <b className="font-semibold"> intelligent</b> and
@@ -82,52 +92,34 @@ export const About = ({ isDark }: AboutProps) => {
                         </div>
                     </div>
 
-                    <div className="mt-20">
-                        <div className="grid md:grid-cols-2 gap-8">
-                            {skillCategories.map((category) => (
-                                <div
-                                    key={category.title}
-                                    className={`p-8 rounded-3xl transition-all duration-300 hover:scale-105 ${
-                                        isDark
-                                            ? "bg-gray-800/50 border border-gray-700/50 hover:border-teal-500/30"
-                                            : "bg-gray-50 border border-gray-200 hover:border-teal-300"
-                                    } backdrop-blur-sm shadow-xl hover:shadow-2xl`}
-                                >
-                                    <div className="flex items-center gap-4 mb-6 justify-center">
-                                        <div
-                                            className={`p-3 rounded-2xl ${
-                                                isDark ? "bg-teal-500/20" : "bg-teal-100"
-                                            }`}
-                                        >
-                                            <category.icon
-                                                className={`w-6 h-6 ${
-                                                    isDark ? "text-teal-400" : "text-teal-600"
-                                                }`}
-                                            />
-                                        </div>
-                                        <h4
-                                            className={`text-xl font-semibold ${
-                                                isDark ? "text-white" : "text-gray-900"
-                                            }`}
-                                        >
-                                            {category.title}
-                                        </h4>
-                                    </div>
+                    <div className="mt-10 flex justify-center flex-col items-center">
+                        <p
+                            className={`text-lg font-medium mb-10 ${
+                                isDark ? "text-gray-300" : "text-gray-600"
+                            }`}
+                        >
+                            Technologies I've Worked With
+                            <IconCode className="inline-block ml-2 mb-1 text-teal-400" />
+                        </p>
 
-                                    <div className="flex flex-wrap gap-3 justify-center">
-                                        {category.skills.map((skill) => (
-                                            <span
-                                                key={skill}
-                                                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
-                                                    isDark
-                                                        ? "bg-gray-700 text-gray-300 hover:bg-gray-600"
-                                                        : "bg-white text-gray-700 hover:bg-gray-100"
-                                                } shadow-md hover:shadow-lg`}
-                                            >
-                                                {skill}
-                                            </span>
-                                        ))}
-                                    </div>
+                        <div className="grid center md:grid-cols-6 gap-8">
+                            {skillCategories.map((skill: SkillInfo) => (
+                                <div
+                                    key={skill.name}
+                                    className={`p-4 pb-0 rounded-2xl transition-all duration-300 hover:scale-101 w-25 h-25 justify-items-center ${
+                                        isDark
+                                            ? "bg-gray-800/50 border border-gray-700/50 hover:border-teal-300/30 hover:bg-gray-900 shadow-xl hover:shadow-2xl"
+                                            : "bg-gray-50 border border-gray-200 hover:border-teal-200 shadow-md hover:shadow-xl"
+                                    } backdrop-blur-sm`}
+                                >
+                                    <img src={`${baseUrl}${skill.url}`} height={45} width={45} />
+                                    <p
+                                        className={`text-sm font-light mt-2 ${
+                                            isDark ? "text-gray-300" : "text-gray-600"
+                                        }`}
+                                    >
+                                        {skill.name}
+                                    </p>
                                 </div>
                             ))}
                         </div>

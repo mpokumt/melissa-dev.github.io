@@ -1,11 +1,8 @@
 import { IconHome, IconMailSpark, IconUser } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 
-import { About } from "./App/About";
-import { Contact } from "./App/Contact";
-import { Footer } from "./App/Footer";
-import { Hero, Navbar } from "./App/Hero";
-import type { NavItemInfo } from "./App/Hero/Navbar/NavItem";
+import { About, Contact, Footer, Hero, Navbar } from "./components";
+import type { NavItemInfo } from "./components/app/Hero/Navbar/NavItem";
 
 export const Portfolio = () => {
     const [isDark, setIsDark] = useState(true);

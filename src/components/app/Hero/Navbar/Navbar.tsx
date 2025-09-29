@@ -65,6 +65,7 @@ export const Navbar = ({
                                 ? "hover:bg-white/10 text-gray-300"
                                 : "hover:bg-black/10 text-gray-600"
                         }`}
+                        aria-label="Toggle Theme"
                     >
                         {isDark ? (
                             <IconSun className="w-4 h-4" />
@@ -81,6 +82,7 @@ export const Navbar = ({
                                     ? "bg-teal-500 hover:bg-teal-400 text-white shadow-lg shadow-teal-500/20"
                                     : "bg-teal-600 hover:bg-teal-700 text-white shadow-lg shadow-teal-600/20"
                             }`}
+                            aria-label="Download Resume"
                         >
                             <IconFileDownload className="w-4 h-4 mr-2" />
                             Download Resume

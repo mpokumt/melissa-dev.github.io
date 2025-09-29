@@ -112,7 +112,12 @@ export const About = ({ isDark }: AboutProps) => {
                                             : "bg-gray-50 border border-gray-200 hover:border-teal-200 shadow-md hover:shadow-xl"
                                     } backdrop-blur-sm`}
                                 >
-                                    <img src={`${baseUrl}${skill.url}`} height={45} width={45} />
+                                    <img
+                                        src={`${baseUrl}${skill.url}`}
+                                        height={45}
+                                        width={45}
+                                        alt={`A tile displaying ${skill.name} logo`}
+                                    />
                                     <p
                                         className={`text-sm font-light mt-2 ${
                                             isDark ? "text-gray-300" : "text-gray-600"

@@ -37,6 +37,7 @@ export const NavItem = ({
                     ? "text-gray-300 hover:text-teal-400 hover:bg-white/5"
                     : "text-gray-600 hover:text-teal-600 hover:bg-black/5"
             }`}
+            aria-label={`Navigate to ${navItem.label} section`}
         >
             <navItem.icon className="w-4 h-4" />
             <span className="text-md font-medium tracking-wide">{navItem.label}</span>

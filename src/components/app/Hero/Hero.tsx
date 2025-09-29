@@ -135,9 +135,10 @@ export const Hero = ({ isDark, handleScrollToSection }: HeroProps) => {
                             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-5">
                                 <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.98 }}>
                                     <Button
-                                        size="xl"
-                                        className="bg-teal-500 hover:bg-teal-400 text-white rounded-2xl px-8 py-3 transition-all duration-300 hover:scale-101 hover:shadow-lg hover:shadow-teal-500/25 w-50 text-md cursor-pointer"
+                                        size="lg"
+                                        className="bg-teal-500 hover:bg-teal-400 text-white rounded-2xl px-8 py-3 transition-all duration-300 hover:scale-101 hover:shadow-lg hover:shadow-teal-500/25 w-50 text-sm cursor-pointer"
                                         onClick={() => handleScrollToSection("about")}
+                                        aria-label="About Me"
                                     >
                                         <IconEyeCode className="w-10 h-10 mr-2 text-lg" />
                                         About Me
@@ -151,12 +152,13 @@ export const Hero = ({ isDark, handleScrollToSection }: HeroProps) => {
                                     >
                                         <Button
                                             variant="outline"
-                                            size="xl"
-                                            className={`rounded-2xl px-8 py-3 transition-all duration-300 hover:scale-101 hover:shadow-teal-500/25 w-50 text-md cursor-pointer ${
+                                            size="lg"
+                                            className={`rounded-2xl px-8 py-3 transition-all duration-300 hover:scale-101 hover:shadow-teal-500/25 w-50 text-sm cursor-pointer ${
                                                 isDark
                                                     ? "border-gray-600 text-gray-900 hover:bg-gray-100"
                                                     : "border-gray-300 text-gray-700 hover:bg-gray-50"
                                             }`}
+                                            aria-label="Download Resume"
                                         >
                                             <IconFileDownload className="w-5 h-5 mr-2" />
                                             Download Resume
@@ -175,6 +177,7 @@ export const Hero = ({ isDark, handleScrollToSection }: HeroProps) => {
                                                 ? "bg-gray-800 text-gray-300 hover:bg-teal-500/20 hover:text-teal-400"
                                                 : "bg-white text-gray-600 hover:bg-teal-50 hover:text-teal-600"
                                         } shadow-lg`}
+                                        aria-label={`Link to my ${contact.label}`}
                                     >
                                         <contact.icon className="w-5 h-5" />
                                     </a>
@@ -207,6 +210,7 @@ export const Hero = ({ isDark, handleScrollToSection }: HeroProps) => {
                 className={`absolute bg-transparent hover:bg-transparent bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer ${
                     isDark ? "text-gray-300" : "text-gray-600 shadow-none"
                 }`}
+                aria-label="Scroll to About Section"
             >
                 <IconChevronsDown size={48} stroke={3} />
             </Button>

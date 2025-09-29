@@ -3,16 +3,25 @@ import {
     IconBrandGithub,
     IconBrandLinkedin,
     IconCalendarWeekFilled,
-    IconMailSpark
+    IconMailSpark,
+    type Icon,
+    type IconProps
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
+import type { ForwardRefExoticComponent, RefAttributes } from "react";
+
+export interface ContactInfo {
+    name: string;
+    icon: ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>;
+    href: string;
+}
 
 interface ContactProps {
     isDark: boolean;
 }
 
 export const Contact = ({ isDark }: ContactProps) => {
-    const socialLinks = [
+    const socialLinks: ContactInfo[] = [
         {
             name: "LinkedIn",
             icon: IconBrandLinkedin,
@@ -38,7 +47,7 @@ export const Contact = ({ isDark }: ContactProps) => {
     return (
         <section
             id="contact"
-            className={`min-h-[90vh] flex items-center justify-center py-20 relative overflow-hidden ${
+            className={`min-h-[85vh] flex items-center justify-center py-20 relative overflow-hidden ${
                 isDark ? "bg-gray-900" : "bg-gray-50"
             }`}
         >
@@ -77,7 +86,7 @@ export const Contact = ({ isDark }: ContactProps) => {
                     </div>
 
                     <div className="grid grid-cols-2 gap-6 max-w-lg mx-auto mb-20">
-                        {socialLinks.map((social) => (
+                        {socialLinks.map((social: ContactInfo) => (
                             <a
                                 key={social.name}
                                 href={social.href}

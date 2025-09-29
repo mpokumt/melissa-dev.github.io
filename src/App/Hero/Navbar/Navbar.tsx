@@ -21,8 +21,10 @@ export const Navbar = ({
     return (
         <nav
             className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
-                isDark ? "bg-gray-900/70 border-gray-700/30" : "bg-white/70 border-gray-200/30"
-            } backdrop-blur-xl border rounded-3xl px-8 py-4 shadow-2xl hover:shadow-3xl min-w-max`}
+                isDark
+                    ? "bg-gray-900/70 border-gray-700/30 backdrop-blur-xl"
+                    : "bg-white/70 border-gray-200/30 backdrop-blur-md"
+            } border rounded-3xl px-8 py-4 shadow-2xl hover:shadow-3xl min-w-max`}
             style={{
                 backdropFilter: "blur(20px)",
                 boxShadow: isDark
@@ -32,7 +34,13 @@ export const Navbar = ({
         >
             <div className="flex items-center gap-50">
                 <a onClick={() => handleScrollToSection("hero")}>
-                    <img className="cursor-pointer" src="/favicon.svg" alt="engineer portfolio logo" width={40} height={40} />
+                    <img
+                        className="cursor-pointer"
+                        src="/favicon.svg"
+                        alt="engineer portfolio logo"
+                        width={40}
+                        height={40}
+                    />
                 </a>
 
                 <div className="hidden md:flex items-center gap-8">

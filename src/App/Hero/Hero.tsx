@@ -11,7 +11,7 @@ import {
 import { motion } from "motion/react";
 import { useEffect, useState, type ForwardRefExoticComponent, type RefAttributes } from "react";
 
-import { Button } from "@/components/Button";
+import { Button } from "@/components";
 
 interface ContactInfo {
     icon: ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>;

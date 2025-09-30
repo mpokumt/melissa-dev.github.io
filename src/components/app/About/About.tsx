@@ -102,7 +102,7 @@ export const About = ({ isDark }: AboutProps) => {
                             <IconCode className="inline-block ml-2 mb-1 text-teal-400" />
                         </p>
 
-                        <div className="grid center md:grid-cols-6 gap-8">
+                        <div className="grid center grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8">
                             {skillCategories.map((skill: SkillInfo) => (
                                 <div
                                     key={skill.name}

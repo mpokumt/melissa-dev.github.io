@@ -32,10 +32,10 @@ export const Navbar = ({
                     : "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9)"
             }}
         >
-            <div className="flex items-center gap-50">
+            <div className="flex items-center gap-0 justify-between sm:gap-65 md:gap-0 lg:gap-25 ">
                 <a onClick={() => handleScrollToSection("hero")}>
                     <img
-                        className="cursor-pointer"
+                        className="cursor-pointer mr-4"
                         src="/portfolio/favicon.svg"
                         alt="engineer portfolio logo"
                         width={40}
@@ -55,7 +55,7 @@ export const Navbar = ({
                     ))}
                 </div>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 ml-0 md:ml-10">
                     <Button
                         variant="ghost"
                         size="icon"
@@ -84,7 +84,7 @@ export const Navbar = ({
                             }`}
                             aria-label="Download Resume"
                         >
-                            <IconFileDownload className="w-4 h-4 mr-2" />
+                            <IconFileDownload className="hidden md:flex w-4 h-4 mr-2" />
                             Download Resume
                         </Button>
                     </a>

@@ -91,7 +91,7 @@ export const Hero = ({ isDark, handleScrollToSection }: HeroProps) => {
                     <div className="space-y-8">
                         <div>
                             <h1
-                                className={`text-5xl lg:text-7xl font-bold ${
+                                className={`text-4xl sm:text-5xl lg:text-7xl font-bold ${
                                     isDark ? "text-gray-100" : "text-gray-900"
                                 } h-20 lg:h-24`}
                             >

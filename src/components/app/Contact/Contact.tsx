@@ -111,7 +111,7 @@ export const Contact = ({ isDark }: ContactProps) => {
                                     </span>
                                 </div>
                                 <IconArrowUpRightCircle
-                                    className={`w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 ${
+                                    className={`hidden md:flex w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 ${
                                         isDark ? "text-gray-400" : "text-gray-400"
                                     }`}
                                 />
